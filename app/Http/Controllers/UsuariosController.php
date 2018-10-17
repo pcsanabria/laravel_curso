@@ -10,7 +10,14 @@ class UsuariosController extends Controller{
 	
 	public function index(){
 		//SELECT * FROM usuarios;
-		$usuarios = DB::table("usuarios")->get();
+		//$usuarios = DB::table("usuarios")->get();
+
+		//DB::table("usuarios")->limit(10)->offset(10)->get();
+		//DB::table("usuarios")->take(10)->skip(10)->get();
+
+		$usuarios = DB::table("usuarios")->paginate(6);
+		//DB::table("usuarios")->simplePaginate(6);
+
 		return view("paginas.social.usuarios")->with([
 			"usuarios" => $usuarios
 		]);
@@ -41,7 +48,7 @@ class UsuariosController extends Controller{
 	}
 
 	public function actualizar($id){
-		
+
 	}
 
 	public function borrar($id){

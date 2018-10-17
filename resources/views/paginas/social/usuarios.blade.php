@@ -4,6 +4,9 @@
 	<form action="usuarios/buscar" method="get">
 		<input type="text" name="nombre" placeholder="Busque por nombre...">
 	</form>
+	<div>
+		<p>Pagina {{$usuarios->currentPage()}} mostrando {{$usuarios->count()}} resultados </p>
+	</div>
 	<section id="card-section">
 		@foreach($usuarios as $usuario)
 		<div class="card">
@@ -18,4 +21,5 @@
 		</div>
 		@endforeach
 	</section>
+	{{$usuarios->links()}}
 @endsection
