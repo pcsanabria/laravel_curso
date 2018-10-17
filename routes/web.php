@@ -24,12 +24,26 @@ Route::get("/","HomeController@index");
 Route::get("/social","HomeSocialController@index");
 Route::get("/test","HomeSocialController@formulario");
 
-Route::get("/usuarios","UsuariosController@index");
+//Route::get("/usuarios","UsuariosController@index");
 Route::get("/otra","UsuariosController@otro");
-Route::get("/buscar","UsuariosController@buscar");
-Route::get("/usuario/{id}","UsuariosController@usuario");
+//Route::get("/buscar","UsuariosController@buscar");
+//Route::get("/usuario/{id}","UsuariosController@usuario");
 
 Route::get("/shop","HomeCommerceController@index");
+
+
+Route::prefix("usuarios")->group(function(){
+
+    Route::get("/","UsuariosController@index");
+    Route::get("/{id}","UsuariosController@usuario");
+    Route::get("/buscar","UsuariosController@buscar");
+    Route::get("/actualizar/{id}","UsuariosController@actualizar");
+    Route::get("/borrar/{id}","UsuariosController@borrar");
+    //->name("listado"); //usuarios.listado
+
+});
+
+
 /*
 //Red Social
 Route::get("/perfil","PerfilController@index");

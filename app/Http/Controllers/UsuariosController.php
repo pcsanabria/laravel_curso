@@ -39,4 +39,12 @@ class UsuariosController extends Controller{
 					->first();
 		return view("paginas.social.usuario",compact("usuario"));
 	}
+
+	public function actualizar($id){
+		
+	}
+
+	public function borrar($id){
+
+	}	
 }

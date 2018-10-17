@@ -1,7 +1,7 @@
 @extends("layout.social")
 
 @section("content")
-	<form action="buscar" method="get">
+	<form action="usuarios/buscar" method="get">
 		<input type="text" name="nombre" placeholder="Busque por nombre...">
 	</form>
 	<section id="card-section">
