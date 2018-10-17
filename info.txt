@@ -1,0 +1,37 @@
+
+php artisan cache:clear : Limpia el cache en el caso de que una configuracion no la este tomando
+
+https://www.generatedata.com/
+
+
+TINYINT : 2^8 = 256 - 1 = 0 al 255 = -128 al 17
+SMALLINT : 2^16 
+MEDIUMINT : 2^24 = 17.000.000 
+INT : 2^32 = 4 billones
+BIGINT : 2^64
+
+dni : 34.xxx.xxx
+
+/*******************************************/
+
+
+PREFIJO = usuarios
+
+/
+/{id}
+/actualizar/{id}
+/borrar/{id}
+
+
+//Borrar
+
+DB::table("nombre")->delete();
+DB::table("nombre")->where(condicion)->delete();
+DB::table("nombre")->truncate();
+
+//Actualizar
+
+DB::table("nombre")->update(["columna"=>"valor"]);
+DB::table("nombre")->where(condicion)->update(["columna"=>"valor","columna_2"=>"valor_2"]);
+
+
