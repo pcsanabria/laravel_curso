@@ -35,7 +35,7 @@ Route::get("/shop","HomeCommerceController@index");
 Route::prefix("usuarios")->group(function(){
 
     Route::get("/","UsuariosController@index");
-    Route::get("/{id}","UsuariosController@usuario");
+    Route::get("/{id}","UsuariosController@usuario")->where(["id"=>"[0-9]"]);
     Route::get("/buscar","UsuariosController@buscar");
     Route::get("/actualizar/{id}","UsuariosController@actualizar");
     Route::get("/borrar/{id}","UsuariosController@borrar");
